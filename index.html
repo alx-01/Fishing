@@ -174,19 +174,6 @@
   </script>
 
   <script type="text/javascript">
-    // Check for required URL parameters and redirect if missing
-    (function () {
-      var challengeUrl = getUrlParameter('challenge_url');
-      var resourceUrl = getUrlParameter('resource_url');
-
-      // If either parameter is missing, redirect to the base URL
-      if (!challengeUrl || !resourceUrl) {
-        window.location.href = 'https://www.gesy.org.cy';
-      }
-    })();
-  </script>
-
-  <script type="text/javascript">
     function onSubmit(event) {
       // Double-check that required parameters are present before allowing submission
       var challengeUrl = getUrlParameter('challenge_url');
@@ -297,16 +284,6 @@
         errorElement.innerHTML = '';
       }
     })();
-  </script>
-
-  <script>
-    // Set the time interval (in milliseconds) for the navigation
-    const navigationInterval = 300000; // 300,000 milliseconds = 5 minutes
-    // Function to navigate back to the landing page
-    function navigateToLandingPage() {
-      window.location.href = 'https://www.gesy.org.cy';
-    }
-    setInterval(navigateToLandingPage, navigationInterval);
   </script>
 
 
