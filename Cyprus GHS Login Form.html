@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<!-- saved from url=(0326)https://login.gesy.org.cy/?bmctx=558353228D693B98D5ECE8066CC562DE2A48DC2D98804BF885BDD499D59D7160&password=secure_string&contextType=external&username=string&challenge_url=https%3A%2F%2Flogin.gesy.org.cy&request_id=-5967223831657959615&authn_try_count=0&locale=en_US&resource_url=https%253A%252F%252Fproviders.gesy.org.cy%252F -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Cyprus GHS Login Form</title>
+  <script type="text/javascript">
+    function init() { }
+    window.onload = init;
+  </script>
+
+
+  <link rel="stylesheet" type="text/css" href="./Cyprus GHS Login Form_files/styles.css">
+  <link rel="shortcut icon" type="image/png" href="https://login.gesy.org.cy/images/favicon.ico">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="version" content="17.6.0">
+  <meta name="robots" content="noindex">
+
+  <link rel="stylesheet" type="text/css" href="./Cyprus GHS Login Form_files/open-sans.css">
+</head>
+
+<body>
+
+  <div class="login-container w-100 h-100" id="login-container">
+    <div id="sidebar" class="sidebar">
+      <img id="loginImage" alt="GESY - We are all in this together" src="./Cyprus GHS Login Form_files/gesy-all-together.png" class="loginBackground">
+    </div>
+    <div id="content" class="content">
+      <div class="panel">
+        <div class="content-panel">
+          <div class="mb-5 headerSpace">
+            <img id="GHSLogo" src="./Cyprus GHS Login Form_files/GHS Logo Vector.svg" alt="GHS Logo" height="50" class="mb-3">
+            <div class="mb-1 text-center">
+              <h2 class="titles" id="titleMsgEL">Είσοδος Λογαριασμού</h2>
+              <h2 class="titles" id="titleMsgEN">Account Login</h2>
+            </div>
+          </div>
+          <form id="loginForm" action="https://login.gesy.org.cy/?bmctx=558353228D693B98D5ECE8066CC562DE2A48DC2D98804BF885BDD499D59D7160&amp;password=secure_string&amp;contextType=external&amp;username=string&amp;challenge_url=https%3A%2F%2Flogin.gesy.org.cy&amp;request_id=-5967223831657959615&amp;authn_try_count=0&amp;locale=en_US&amp;resource_url=https%253A%252F%252Fproviders.gesy.org.cy%252F" method="POST" onsubmit="onSubmit(event)">
+
+            <div class="row mb-3">
+              <div class="col">
+                <div class="control-group mb-2">
+                  <label for="username" class="element-title">Όνομα χρήστη / Username</label>
+                  <div class="input-group">
+                    <img id="userIcon" alt="Username" src="./Cyprus GHS Login Form_files/fa-user.png" class="input-icon">
+                    <input id="username" type="text" name="username" autofocus="" tabindex="1" class="form-group" oninvalid="this.setCustomValidity(&#39;Παρακαλώ εισάγετε μία τιμή / Please insert a value&#39;)" oninput="setCustomValidity(&#39;&#39;)" required="">
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-6 col-12">
+                      <a href="https://registration.gesy.org.cy/retrieveUsername?lang=el" target="_blank" tabindex="2">Ξεχάσατε το όνομα χρήστη;</a>
+                    </div>
+                    <div class="col-sm-6 col-12">
+                      <a href="https://registration.gesy.org.cy/retrieveUsername?lang=en" target="_blank" tabindex="2">Forgot your username?</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <div class="control-group mb-0 mb-sm-3">
+                  <label for="password" class="element-title">Συνθηματικό / Password</label>
+                  <div class="input-group password-input-group">
+
+                    <span><img id="passwordIcon" alt="Password" src="./Cyprus GHS Login Form_files/fa-lock.png" class="input-icon"></span>
+                    <input id="password" type="password" name="password" tabindex="1" class="form-group" oninvalid="this.setCustomValidity(&#39;Παρακαλώ εισάγετε μία τιμή / Please insert a value&#39;)" oninput="handlePasswordInput(this)" required="">
+
+                    <span onclick="togglePasswordVisibility();" ontouchend="togglePasswordVisibility(); event.preventDefault();">
+                      <img id="btnShowPass" alt="show password" src="./Cyprus GHS Login Form_files/fa-eye.png" class="show-password-icon">
+
+                    </span>
+
+                    <span id="capsBadge" class="caps-badge">CAPS LOCK ON</span>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <a href="https://registration.gesy.org.cy/resetPassword?lang=el" target="_blank" tabindex="2">Ξεχάσατε το συνθηματικό;</a>
+                    </div>
+                    <div class="col-sm-6">
+                      <a href="https://registration.gesy.org.cy/resetPassword?lang=en" target="_blank" tabindex="2">Forgot your password?</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row mt-3">
+              <div class="col">
+                <div class="control-group">
+                  <div class="form-group">
+                    <button id="btnLogin" class="btn" type="submit" tabindex="1">
+                      Είσοδος / Login
+                      <img src="./Cyprus GHS Login Form_files/arrow-right-to-bracket-solid.svg" alt="Login" class="btn-icon">
+                    </button>
+                    <div class="alert alert-danger" id="error_msg" style="display: none;">
+                      <span class="danger-span" id="msg"></span>
+                      <img id="dangerIcon" alt="exclamation" src="./Cyprus GHS Login Form_files/fa-exclamation-triangle.png" class="danger-icon">
+                    </div>
+                    <div class="row text-center signUp-panel mt-2">
+                      <div class="col-12">
+                        <div class="form-group">
+                          <span class="signup-text">Δεν έχετε ακόμη λογαριασμό; </span>
+                          <a href="https://registration.gesy.org.cy/registration?lang=el" target="_blank" tabindex="2">Εγγραφείτε
+                            εδώ</a>
+                        </div>
+                      </div>
+
+                      <div class="col-12">
+                        <div class="form-group">
+                          <span class="signup-text">Don't have an account yet? </span>
+                          <a href="https://registration.gesy.org.cy/registration?lang=en" target="_blank" tabindex="2">Sign up
+                            here</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row mt-4">
+              <div class="col-12">
+                <div class="d-flex justify-content-between">
+                  <img id="euLogo" alt="ETPA" src="./Cyprus GHS Login Form_files/EU-LOGO-ETPA-2.png" height="70">
+                  <img id="cyLogo" alt="Cyprus Gov" src="./Cyprus GHS Login Form_files/cy-logo.png" height="70">
+                  <img id="fundsLogo" alt="Structural Funds Cyprus" src="./Cyprus GHS Login Form_files/structural-funds.png" height="70">
+                </div>
+              </div>
+            </div>
+
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function togglePasswordVisibility() {
+      var passwordInput = document.getElementById('password');
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+      } else {
+        passwordInput.type = 'password';
+      }
+    }
+
+    function handlePasswordInput(inputElement) {
+      inputElement.setCustomValidity('');
+      const btnShowPass = document.getElementById('btnShowPass');
+      const capsBadge = document.getElementById('capsBadge');
+      if (inputElement.value === '') {
+        btnShowPass.classList.remove('visible');
+        capsBadge.classList.remove('with-show-button');
+      } else {
+        btnShowPass.classList.add('visible');
+        capsBadge.classList.add('with-show-button');
+      }
+    }
+  </script>
+
+  <script type="text/javascript">
+    var error = getUrlParameter('p_error_code');
+    var langList = document.getElementById('languageList');
+
+    function getUrlParameter(name) {
+      name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+      var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+      var results = regex.exec(location.search);
+      return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+    }
+  </script>
+
+  <script type="text/javascript">
+    // Check for required URL parameters and redirect if missing
+    (function () {
+      var challengeUrl = getUrlParameter('challenge_url');
+      var resourceUrl = getUrlParameter('resource_url');
+
+      // If either parameter is missing, redirect to the base URL
+      if (!challengeUrl || !resourceUrl) {
+        window.location.href = 'https://www.gesy.org.cy';
+      }
+    })();
+  </script>
+
+  <script type="text/javascript">
+    function onSubmit(event) {
+      // Double-check that required parameters are present before allowing submission
+      var challengeUrl = getUrlParameter('challenge_url');
+      var resourceUrl = getUrlParameter('resource_url');
+
+      // If either parameter is missing, prevent submission
+      if (!challengeUrl || !resourceUrl) {
+        event.preventDefault();
+        return;
+      }
+
+      // Set the form action only when parameters are valid
+      var form = document.getElementById('loginForm');
+      form.action = 'https://oam.gesy.org.cy/oam/server/auth_cred_submit';
+
+      document.getElementById('btnLogin').disabled = true;
+    }
+  </script>
+  <script type="text/javascript">
+    var username = document.getElementById('username');
+    var password = document.getElementById('password');
+
+    username.addEventListener(
+      'invalid',
+      function (e) {
+        if (!username.validity.valid) {
+          e.target.setCustomValidity('Παρακαλώ εισάγετε μία τιμή / Please insert a value');
+        }
+        username.addEventListener('input', function (e) {
+          e.target.setCustomValidity('');
+        });
+      },
+      false
+    );
+
+    password.addEventListener(
+      'invalid',
+      function (e) {
+        if (password.validity.valueMissing) {
+          e.target.setCustomValidity('Παρακαλώ εισάγετε μία τιμή / Please insert a value');
+        }
+        password.addEventListener('input', function (e) {
+          e.target.setCustomValidity('');
+        });
+      },
+      false
+    );
+
+    var capsBadge = document.getElementById("capsBadge");
+    password.addEventListener(
+      'keyup',
+      function (e) {
+        if (e.getModifierState("CapsLock")) {
+          capsBadge.classList.add("visible");
+        } else {
+          capsBadge.classList.remove("visible");
+        }
+      },
+      false
+    );
+  </script>
+  <script>
+    (function () {
+      var error = getUrlParameter('p_error_code');
+      var element = document.getElementById('error_msg');
+      var errorElement = element.firstElementChild;
+      if (error === 'OAM-1') {
+        element.style.display = 'block';
+        errorElement.innerHTML =
+          'Λανθασμένο όνομα χρήστη ή συνθηματικό / An incorrect Username or Password was specified';
+      } else if (error === 'OAM-2') {
+        element.style.display = 'block';
+        errorElement.innerHTML =
+          'Λανθασμένο όνομα χρήστη ή συνθηματικό / An incorrect Username or Password was specified';
+      } else if (error === 'OAM-3') {
+        element.style.display = 'block';
+        errorElement.innerHTML =
+          'Παρουσιάστηκε μη αναμενόμενο σφάλμα κατά την επεξεργασία των διαπιστευτηρίων. Δοκιμάστε ξανά! / Unexpected Error occurred while processing credentials. Please retry your action again!';
+      } else if (error === 'OAM-4') {
+        element.style.display = 'block';
+        errorElement.innerHTML =
+          'Σφάλμα συστήματος. Επικοινωνήστε με τον διαχειριστή του συστήματος / System error. Please contact the System Administrator';
+      } else if (error === 'OAM-5') {
+        element.style.display = 'block';
+        errorElement.innerHTML =
+          'Ο λογαριασμός χρήστη είναι κλειδωμένος ή απενεργοποιημένος. Επικοινωνήστε με τον διαχειριστή του συστήματος / The user account is locked or disabled. Please contact the System Administrator';
+      } else if (error === 'OAM-6') {
+        element.style.display = 'block';
+        errorElement.innerHTML =
+          'Ο χρήστης έχει ήδη φτάσει στον μέγιστο επιτρεπόμενο αριθμό συνδέσεων. Κλείστε μία από τις υπάρχουσες συνδέσεις πριν προσπαθήσετε να συνδεθείτε ξανά / The user has already reached the maximum allowed number of sessions. Please close one of the existing sessions before trying to login again';
+      } else if (error === 'OAM-7') {
+        element.style.display = 'block';
+        errorElement.innerHTML =
+          'Σφάλμα συστήματος. Δοκιμάστε ξανά. Εάν συνεχίσετε να λαμβάνετε αυτό το σφάλμα, επικοινωνήστε με τον διαχειριστή / System error. Please re-try your action. If you continue to get this error, please contact the Administrator';
+      } else if (error === 'OAM-8') {
+        element.style.display = 'block';
+        errorElement.innerHTML = 'Η ταυτοποίηση απέτυχε / Authentication failed';
+      } else if (error === 'OAM-9') {
+        element.style.display = 'block';
+        errorElement.innerHTML =
+          'Σφάλμα συστήματος. Δοκιμάστε ξανά. Εάν συνεχίσετε να λαμβάνετε αυτό το σφάλμα, επικοινωνήστε με τον διαχειριστή / System error. Please re-try your action. If you continue to get this error, please contact the Administrator';
+      } else if (error === 'OAM-10') {
+        element.style.display = 'block';
+        errorElement.innerHTML =
+          'Ο κωδικός έχει λήξει. Επικοινωνήστε με τον διαχειριστή του συστήματος / The password has expired. Please contact the System Administrator';
+      } else {
+        element.style.display = 'none';
+        errorElement.innerHTML = '';
+      }
+    })();
+  </script>
+
+  <script>
+    // Set the time interval (in milliseconds) for the navigation
+    const navigationInterval = 300000; // 300,000 milliseconds = 5 minutes
+    // Function to navigate back to the landing page
+    function navigateToLandingPage() {
+      window.location.href = 'https://www.gesy.org.cy';
+    }
+    setInterval(navigateToLandingPage, navigationInterval);
+  </script>
+
+
+</body></html>
